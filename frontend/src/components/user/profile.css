@@ -1,0 +1,307 @@
+/* Profile Layout */
+.profile-container {
+  display: flex;
+  gap: 32px;
+  padding: 0 20px;
+  color: var(--text-primary);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+  }
+}
+
+/* User Card (Sidebar) */
+.profile-sidebar {
+  width: 296px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-avatar-container {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-tertiary);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow);
+}
+
+.profile-avatar-container svg {
+  width: 50%;
+  height: 50%;
+  color: var(--text-muted);
+}
+
+.profile-username {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.profile-info-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-bio {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin: 8px 0;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.profile-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.profile-detail-item svg {
+  color: var(--text-muted);
+}
+
+.profile-detail-item a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.profile-detail-item a:hover {
+  text-decoration: underline;
+  color: var(--accent-success);
+}
+
+.profile-follow-btn {
+  width: 100%;
+  padding: 6px 16px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 8px;
+}
+
+.profile-follow-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.profile-stats {
+  display: flex;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.profile-stats span strong {
+  color: var(--text-primary);
+}
+
+/* Main Content Area */
+.profile-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Tabs */
+.profile-tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.tab {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 8px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tab:hover {
+  color: var(--text-primary);
+}
+
+.tab.active {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--accent-danger);
+  border-radius: 2px;
+}
+
+/* Heatmap Section */
+.heatmap-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heatmap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heatmap-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.contribution-count {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Heatmap Grid */
+.heatmap-graph {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.react-heatmap-wrapper {
+  margin-top: 16px;
+}
+
+/* React Calendar Heatmap SVG Styles */
+.react-calendar-heatmap text {
+  font-size: 10px;
+  fill: var(--text-muted);
+}
+
+.react-calendar-heatmap rect {
+  rx: 2; /* Border radius equivalent for SVG rect */
+}
+
+/* Base Legend Cell */
+.heatmap-cell {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: inline-block;
+}
+
+/* Light Mode SVG Fills & Legend Backgrounds */
+.react-calendar-heatmap .color-empty { fill: var(--bg-tertiary); }
+.react-calendar-heatmap .color-scale-1 { fill: #d9d9d9; }
+.react-calendar-heatmap .color-scale-2 { fill: #a6a6a6; }
+.react-calendar-heatmap .color-scale-3 { fill: #595959; }
+.react-calendar-heatmap .color-scale-4 { fill: #242424; }
+
+.heatmap-cell.color-empty { background-color: var(--bg-tertiary); }
+.heatmap-cell.color-scale-1 { background-color: #d9d9d9; }
+.heatmap-cell.color-scale-2 { background-color: #a6a6a6; }
+.heatmap-cell.color-scale-3 { background-color: #595959; }
+.heatmap-cell.color-scale-4 { background-color: #242424; }
+
+@media (prefers-color-scheme: dark) {
+  .heatmap-cell { border-color: rgba(255, 255, 255, 0.05); }
+  
+  .react-calendar-heatmap .color-scale-1 { fill: #404040; }
+  .react-calendar-heatmap .color-scale-2 { fill: #737373; }
+  .react-calendar-heatmap .color-scale-3 { fill: #a6a6a6; }
+  .react-calendar-heatmap .color-scale-4 { fill: #e6e6e6; }
+  
+  .heatmap-cell.color-scale-1 { background-color: #404040; }
+  .heatmap-cell.color-scale-2 { background-color: #737373; }
+  .heatmap-cell.color-scale-3 { background-color: #a6a6a6; }
+  .heatmap-cell.color-scale-4 { background-color: #e6e6e6; }
+}
+
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 16px;
+}
+
+.heatmap-legend span {
+  margin: 0 4px;
+}
+
+/* Tab Badge */
+.tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  padding: 0 6px;
+  margin-left: 6px;
+}
+
+/* Skeleton Loader */
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
